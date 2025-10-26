@@ -59,3 +59,149 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+Oke 👍 — kalau **XAMPP sudah terinstal di Kali Linux**, kamu bisa menjalankannya dengan mudah lewat terminal.
+Berikut panduan lengkap dan aman step-by-step 👇
+
+---
+
+## 🧩 1. Pastikan XAMPP terpasang
+
+Biasanya XAMPP terinstal di:
+
+```bash
+/opt/lampp
+```
+
+Cek dengan:
+
+```bash
+ls /opt/lampp
+```
+
+Kalau folder itu ada (berisi `lampp`, `xampp`, `htdocs`, dll), berarti XAMPP sudah benar terinstal.
+
+---
+
+## ▶️ 2. Menjalankan XAMPP
+
+Gunakan perintah ini:
+
+```bash
+sudo /opt/lampp/lampp start
+```
+
+Itu akan menyalakan semua komponen utama:
+
+* **Apache**
+* **MySQL (MariaDB)**
+* **ProFTPD (optional)**
+
+Kalau berhasil, akan muncul output seperti:
+
+```
+Starting XAMPP for Linux 8.x.x...
+XAMPP: Starting Apache...ok.
+XAMPP: Starting MySQL...ok.
+```
+
+---
+
+## 🛑 3. Untuk menghentikan XAMPP
+
+Gunakan:
+
+```bash
+sudo /opt/lampp/lampp stop
+```
+
+---
+
+## 🔁 4. Untuk restart (kalau ubah konfigurasi Apache/PHP)
+
+```bash
+sudo /opt/lampp/lampp restart
+```
+
+---
+
+## 🧠 5. Mengecek status XAMPP
+
+```bash
+sudo /opt/lampp/lampp status
+```
+
+---
+
+## 🌐 6. Mengakses XAMPP di browser
+
+Buka browser dan masuk ke:
+
+```
+http://localhost
+```
+
+atau
+
+```
+http://127.0.0.1
+```
+
+Jika berhasil, akan tampil halaman dashboard XAMPP.
+
+---
+
+## 📁 7. Lokasi proyek web
+
+Folder tempat kamu meletakkan file web (default):
+
+```
+/opt/lampp/htdocs/
+```
+
+Misalnya:
+
+```bash
+sudo cp -r ~/Projects/laravel-kali-test /opt/lampp/htdocs/
+```
+
+Lalu bisa diakses di browser:
+
+```
+http://localhost/laravel-kali-test/public
+```
+
+---
+
+## ⚙️ 8. Mengatur PHP XAMPP (jika perlu)
+
+Kalau kamu ingin XAMPP memakai PHP dari dalam `/opt/lampp/php/`, cek versi:
+
+```bash
+/opt/lampp/bin/php -v
+```
+
+Dan untuk menjalankan Composer dengan PHP XAMPP:
+
+```bash
+sudo /opt/lampp/bin/php /usr/local/bin/composer install
+```
+
+> (Pastikan path composer sesuai dengan hasil `which composer`)
+
+---
+
+## 💡 Tips tambahan
+
+Kalau mau XAMPP otomatis start saat boot:
+
+```bash
+sudo ln -s /opt/lampp/lampp /etc/init.d/lampp
+sudo update-rc.d lampp defaults
+```
+
+---
+
+Kalau kamu mau saya bantu **menjalankan Laravel project kamu di XAMPP (port 80 atau 8080)**, kirimkan saja struktur folder project-nya (atau path-nya) — nanti saya bantu konfigurasi virtual host atau symlink-nya biar langsung jalan di browser.
+
