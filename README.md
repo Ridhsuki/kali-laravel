@@ -245,3 +245,5 @@ Berikut adalah dokumen terkait pengembangan proyek DekatKu:
 <br>
 
 now i will try again in 30 Nov, tadi typo jir ke paste dari yutub :v
+
+test now
